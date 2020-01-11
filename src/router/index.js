@@ -18,6 +18,11 @@ const routes = [
     path: '/about',
     name: 'about',
     component: () => import('../views/About.vue')
+  },
+  {
+    path: '/todo',
+    name: 'todo',
+    component: () => import('../views/Todo.vue')
   }
 ]
 
