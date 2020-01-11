@@ -1,12 +1,12 @@
 <template>
   <div class="todo">
-    <div class="row align-items-center">
-      <div class="col-3 bg-info">
+    <b-row>
+      <b-col cols="3" class="bg-info">
         left
-      </div>
-      <div class="col-9 bg-danger">
+      </b-col>
+      <b-col cols="" class="bg-danger">
         right
-      </div>
-    </div>
+      </b-col>
+    </b-row>
   </div>
 </template>
