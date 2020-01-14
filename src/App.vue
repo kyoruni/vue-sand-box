@@ -8,11 +8,7 @@
       <b-collapse id="nav-collapse" is-nav>
         <!-- Home -->
         <b-navbar-nav>
-          <b-nav-item to="/">ほーむ</b-nav-item>
-        </b-navbar-nav>
-        <!-- About -->
-        <b-navbar-nav>
-          <b-nav-item to="/about">あばうと</b-nav-item>
+          <b-nav-item to="/">HOME</b-nav-item>
         </b-navbar-nav>
         <!-- Todo -->
         <b-navbar-nav>
