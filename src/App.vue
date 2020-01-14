@@ -18,6 +18,10 @@
         <b-navbar-nav>
           <b-nav-item to="/todo">TODO</b-nav-item>
         </b-navbar-nav>
+        <!-- Draggable -->
+        <b-navbar-nav>
+          <b-nav-item to="/draggable">ドラッグ＆ドロップ</b-nav-item>
+        </b-navbar-nav>
       </b-collapse>
     </b-navbar>
     <!-- メインページ -->

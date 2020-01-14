@@ -23,6 +23,11 @@ const routes = [
     path: '/todo',
     name: 'todo',
     component: () => import('../views/Todo.vue')
+  },
+  {
+    path: '/draggable',
+    name: 'draggable',
+    component: () => import('../views/Draggable.vue')
   }
 ]
 
