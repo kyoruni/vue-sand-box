@@ -1,8 +1,9 @@
 <template>
   <div class="draggable">
     <b-row class="mt-2">
-      <!-- フルーツ -->
+      <!-- 果物 -->
       <b-col cols="3">
+        <h6 class="font-weight-bold">果物</h6>
         <ul class="list-group">
           <draggable tag :options="{group:'foods'}">
             <li class="list-group-item" v-for="fruit in fruits" :key="fruit.no">
@@ -16,6 +17,7 @@
       </b-col>
       <!-- 野菜 -->
       <b-col cols="3">
+        <h6 class="font-weight-bold">野菜</h6>
         <ul class="list-group">
           <draggable tag :options="{group:'foods'}">
             <li class="list-group-item" v-for="vegetable in vegetables" :key="vegetable.no">
@@ -29,6 +31,7 @@
       </b-col>
       <!-- 曜日 -->
       <b-col cols="3">
+        <h6 class="font-weight-bold">曜日</h6>
         <ul class="list-group">
           <draggable tag>
             <li class="list-group-item" v-for="weekday in weekdays" :key="weekday.no">
@@ -42,6 +45,7 @@
       </b-col>
       <!-- 紅茶 -->
       <b-col cols="3">
+        <h6 class="font-weight-bold">紅茶</h6>
         <ul class="list-group">
           <draggable tag>
             <li class="list-group-item" v-for="tea in teas" :key="tea.no">
