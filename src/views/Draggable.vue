@@ -4,25 +4,33 @@
       <!-- フルーツ -->
       <b-col cols="3">
         <b-list-group>
-          <b-list-group-item v-for="fruit in fruits" :key="fruit.no">{{ fruit.name }}</b-list-group-item>
+          <draggable tag>
+            <b-list-group-item v-for="fruit in fruits" :key="fruit.no">{{ fruit.name }}</b-list-group-item>
+          </draggable>
         </b-list-group>
       </b-col>
       <!-- 野菜 -->
       <b-col cols="3">
         <b-list-group>
-          <b-list-group-item v-for="vegetable in vegetables" :key="vegetable.no">{{ vegetable.name }}</b-list-group-item>
+          <draggable tag>
+            <b-list-group-item v-for="vegetable in vegetables" :key="vegetable.no">{{ vegetable.name }}</b-list-group-item>
+          </draggable>
         </b-list-group>
       </b-col>
       <!-- 曜日 -->
       <b-col cols="3">
         <b-list-group>
-          <b-list-group-item v-for="weekday in weekdays" :key="weekday.no">{{ weekday.name }}</b-list-group-item>
+          <draggable tag>
+            <b-list-group-item v-for="weekday in weekdays" :key="weekday.no">{{ weekday.name }}</b-list-group-item>
+          </draggable>
         </b-list-group>
       </b-col>
       <!-- 紅茶 -->
       <b-col cols="3">
         <b-list-group>
-          <b-list-group-item v-for="tea in teas" :key="tea.no">{{ tea.name }}</b-list-group-item>
+          <draggable tag>
+            <b-list-group-item v-for="tea in teas" :key="tea.no">{{ tea.name }}</b-list-group-item>
+          </draggable>
         </b-list-group>
       </b-col>
     </b-row>
@@ -30,7 +38,12 @@
 </template>
 
 <script>
+import draggable from 'vuedraggable'
+
 export default {
+  components: {
+    draggable
+  },
   data () {
     return {
       fruits: [
