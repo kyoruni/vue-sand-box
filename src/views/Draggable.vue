@@ -4,7 +4,7 @@
       <!-- フルーツ -->
       <b-col cols="3">
         <b-list-group>
-          <draggable tag>
+          <draggable tag :options="{group:'foods'}">
             <b-list-group-item v-for="fruit in fruits" :key="fruit.no">
               {{ fruit.name }}
               <b-badge pill variant="info" class="pull-right">{{ fruit.categoryName }}</b-badge>
@@ -15,7 +15,7 @@
       <!-- 野菜 -->
       <b-col cols="3">
         <b-list-group>
-          <draggable tag>
+          <draggable tag :options="{group:'foods'}">
             <b-list-group-item v-for="vegetable in vegetables" :key="vegetable.no">
               {{ vegetable.name }}
               <b-badge pill variant="info">{{ vegetable.categoryName }}</b-badge>
