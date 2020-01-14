@@ -14,13 +14,15 @@
         <b-navbar-nav>
           <b-nav-item to="/about">あばうと</b-nav-item>
         </b-navbar-nav>
+        <!-- Todo -->
+        <b-navbar-nav>
+          <b-nav-item to="/todo">TODO</b-nav-item>
+        </b-navbar-nav>
       </b-collapse>
     </b-navbar>
     <!-- メインページ -->
     <b-container fluid>
-      <b-row>
-        <router-view/>
-      </b-row>
+      <router-view/>
     </b-container>
   </div>
 </template>
