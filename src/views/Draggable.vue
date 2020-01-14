@@ -3,55 +3,55 @@
     <b-row class="mt-2">
       <!-- フルーツ -->
       <b-col cols="3">
-        <b-list-group>
+        <ul class="list-group">
           <draggable tag :options="{group:'foods'}">
-            <b-list-group-item v-for="fruit in fruits" :key="fruit.no">
+            <li class="list-group-item" v-for="fruit in fruits" :key="fruit.no">
               {{ fruit.name }}
               <b-badge pill variant="info" class="pull-right">
                 ID: {{ fruit.no }}
               </b-badge>
-            </b-list-group-item>
+            </li>
           </draggable>
-        </b-list-group>
+        </ul>
       </b-col>
       <!-- 野菜 -->
       <b-col cols="3">
-        <b-list-group>
+        <ul class="list-group">
           <draggable tag :options="{group:'foods'}">
-            <b-list-group-item v-for="vegetable in vegetables" :key="vegetable.no">
+            <li class="list-group-item" v-for="vegetable in vegetables" :key="vegetable.no">
               {{ vegetable.name }}
               <b-badge pill variant="info">
                 ID: {{ vegetable.no }}
               </b-badge>
-            </b-list-group-item>
+            </li>
           </draggable>
-        </b-list-group>
+        </ul>
       </b-col>
       <!-- 曜日 -->
       <b-col cols="3">
-        <b-list-group>
+        <ul class="list-group">
           <draggable tag>
-            <b-list-group-item v-for="weekday in weekdays" :key="weekday.no">
+            <li class="list-group-item" v-for="weekday in weekdays" :key="weekday.no">
               {{ weekday.name }}
               <b-badge pill variant="info">
                 ID: {{ weekday.no }}
               </b-badge>
-            </b-list-group-item>
+            </li>
           </draggable>
-        </b-list-group>
+        </ul>
       </b-col>
       <!-- 紅茶 -->
       <b-col cols="3">
-        <b-list-group>
+        <ul class="list-group">
           <draggable tag>
-            <b-list-group-item v-for="tea in teas" :key="tea.no">
+            <li class="list-group-item" v-for="tea in teas" :key="tea.no">
               {{ tea.name }}
               <b-badge pill variant="info">
                 ID: {{ tea.no }}
               </b-badge>
-            </b-list-group-item>
+            </li>
           </draggable>
-        </b-list-group>
+        </ul>
       </b-col>
     </b-row>
   </div>
