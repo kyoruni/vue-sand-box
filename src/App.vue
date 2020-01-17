@@ -26,6 +26,10 @@
         <b-navbar-nav>
           <b-nav-item to="/parent">親子コンポーネント</b-nav-item>
         </b-navbar-nav>
+        <!-- Components-Method2 -->
+        <b-navbar-nav>
+          <b-nav-item to="/parent2">親子コンポーネント2</b-nav-item>
+        </b-navbar-nav>
       </b-collapse>
     </b-navbar>
     <!-- メインページ -->
