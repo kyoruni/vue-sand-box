@@ -27,9 +27,9 @@ const routes = [
   },
   {
     // 親子コンポーネント間のメソッド実行について
-    path: '/components-method',
-    name: 'componentsMethod',
-    component: () => import('../views/ComponentsMethod.vue')
+    path: '/parent',
+    name: 'parent',
+    component: () => import('../views/Parent.vue')
   }
 ]
 

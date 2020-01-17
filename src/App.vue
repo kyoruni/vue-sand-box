@@ -24,7 +24,7 @@
         </b-navbar-nav>
         <!-- Components-Method -->
         <b-navbar-nav>
-          <b-nav-item to="/components-method">親子コンポーネント</b-nav-item>
+          <b-nav-item to="/parent">親子コンポーネント</b-nav-item>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
