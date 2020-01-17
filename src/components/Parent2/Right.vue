@@ -17,15 +17,31 @@
 
 <script>
 export default {
+  data () {
+    return {
+      currentTab: 'Fire'
+    }
+  },
   methods: {
     clickFireButton () {
-      alert('fire')
+      this.currentTab = 'Fire'
     },
     clickWaterButton () {
-      alert('water')
+      this.currentTab = 'Water'
     },
     clickGrassButton () {
-      alert('grass')
+      this.currentTab = 'Grass'
+    }
+  },
+  computed: {
+    showFireType () {
+      return this.currentTab === 'Fire'
+    },
+    showWaterType () {
+      return this.currentTab === 'Water'
+    },
+    showGrassType () {
+      return this.currentTab === 'Grass'
     }
   }
 }
