@@ -24,12 +24,6 @@ const routes = [
     path: '/editor',
     name: 'editor',
     component: () => import('../views/Editor.vue')
-  },
-  {
-    // 親子コンポーネント間のメソッド実行について
-    path: '/parent',
-    name: 'parent',
-    component: () => import('../views/Parent.vue')
   }
 ]
 
