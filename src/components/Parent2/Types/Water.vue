@@ -1,7 +1,9 @@
 <template>
   <div class="water">
     <h6 class="mt-2">みず</h6>
-    <b-button @click="closeWater" size="sm">閉じる</b-button>
+    <b-button @click="closeWater" size="sm" class="float-right">
+      閉じる
+    </b-button>
   </div>
 </template>
 
