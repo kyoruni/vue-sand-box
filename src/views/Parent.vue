@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import child from '../components/child.vue'
+import child from '../components/Child.vue'
 
 export default {
   components: {
