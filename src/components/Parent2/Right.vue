@@ -14,9 +14,9 @@
     </b-button-group>
 
     <div>
-      <fire></fire>
-      <water></water>
-      <grass></grass>
+      <fire v-if="showFireType"></fire>
+      <water v-if="showWaterType"></water>
+      <grass v-if="showGrassType"></grass>
     </div>
   </div>
 </template>
