@@ -12,11 +12,26 @@
         くさ
       </b-button>
     </b-button-group>
+
+    <div>
+      <fire></fire>
+      <water></water>
+      <grass></grass>
+    </div>
   </div>
 </template>
 
 <script>
+import fire from './Types/Fire.vue'
+import water from './Types/Water.vue'
+import grass from './Types/Grass.vue'
+
 export default {
+  components: {
+    fire,
+    water,
+    grass
+  },
   data () {
     return {
       currentTab: 'Fire'
