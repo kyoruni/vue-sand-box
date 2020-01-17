@@ -1,5 +1,5 @@
 <template>
-  <div class="grass">
-    くさ
+  <div class="water">
+    みず
   </div>
 </template>
