@@ -5,7 +5,7 @@
     <b-button variant="outline-info" @click="parentToChildButton">親コンポーネントから子メソッド</b-button>
 
     <!-- 子コンポーネント -->
-    <child ref="childComponent"></child>
+    <child ref="childComponent" @childToParent="parentButton"></child>
   </div>
 </template>
 
