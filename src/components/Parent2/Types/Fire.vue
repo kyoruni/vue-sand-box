@@ -1,7 +1,7 @@
 <template>
   <div class="fire">
     <h6 class="mt-2">ほのお</h6>
-    <b-button @click="closeFire" size="sm" class="float-right">
+    <b-button @click="closeTab" size="sm" class="float-right">
       閉じる
     </b-button>
   </div>
@@ -10,8 +10,8 @@
 <script>
 export default {
   methods: {
-    closeFire () {
-      alert('closeFire')
+    closeTab () {
+      this.$emit('close')
     }
   }
 }

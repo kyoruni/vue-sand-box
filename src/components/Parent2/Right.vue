@@ -14,9 +14,9 @@
     </b-button-group>
 
     <div>
-      <fire v-if="showFireType"></fire>
-      <water v-if="showWaterType"></water>
-      <grass v-if="showGrassType"></grass>
+      <fire v-if="showFireType" @close="closeTab"></fire>
+      <water v-if="showWaterType" @close="closeTab"></water>
+      <grass v-if="showGrassType" @close="closeTab"></grass>
     </div>
   </div>
 </template>
@@ -34,7 +34,7 @@ export default {
   },
   data () {
     return {
-      currentTab: 'Fire'
+      currentTab: ''
     }
   },
   methods: {
@@ -46,6 +46,9 @@ export default {
     },
     clickGrassButton () {
       this.currentTab = 'Grass'
+    },
+    closeTab () {
+      this.currentTab = ''
     }
   },
   computed: {
