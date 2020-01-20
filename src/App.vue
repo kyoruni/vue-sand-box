@@ -33,7 +33,7 @@
       </b-collapse>
     </b-navbar>
     <!-- メインページ -->
-    <b-container fluid>
+    <b-container fluid class="mt-2">
       <router-view/>
     </b-container>
   </div>
