@@ -1,6 +1,8 @@
 <template>
   <div class="fire mt-2">
-    <draggable :group="{ name: 'poke', pull: 'clone', put: false }" :list="pokemons">
+    <draggable
+      :move="checkMove"
+      :group="{ name: 'poke', pull: 'clone', put: false }" :list="pokemons">
       <!-- item -->
       <div v-for="pokemon in pokemons" :key="pokemon.no" class="card mb-2">
         <div class="card-body">
@@ -38,6 +40,12 @@ export default {
   methods: {
     closeTab () {
       this.$emit('close')
+    },
+    checkMove: function (e) {
+      if (e.to.offsetParent.id === 'left') {
+        return true
+      }
+      return false
     }
   }
 }

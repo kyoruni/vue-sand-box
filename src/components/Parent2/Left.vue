@@ -1,5 +1,5 @@
 <template>
-  <div class="left">
+  <div class="left" id="left">
     <draggable group="poke" :list="leftBlocks">
       <!-- item -->
       <div v-for="leftBlock in leftBlocks" :key="leftBlock.no" class="card mb-2">
