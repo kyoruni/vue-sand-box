@@ -1,9 +1,15 @@
 <template>
   <div class="left">
-    <draggable group="poke">
-    <div class="bg-info">header</div>
-    <div class="bg-warning">body</div>
-    <div class="bg-success">footer</div>
+    <draggable group="poke" :list="leftBlocks">
+      <!-- item -->
+      <div v-for="leftBlock in leftBlocks" :key="leftBlock.no" class="card mb-2">
+        <div class="card-body">
+          {{ leftBlock.kind }}
+        </div>
+        <div class="card-footer">
+          {{ leftBlock.name }}
+        </div>
+      </div>
     </draggable>
   </div>
 </template>
@@ -14,6 +20,14 @@ import draggable from 'vuedraggable'
 export default {
   components: {
     draggable
+  },
+  data () {
+    return {
+      leftBlocks: [
+        { no: '025', name: 'ピカチュウ', kind: 'ねずみポケモン' },
+        { no: '151', name: 'ミュウツー', kind: 'いでんしポケモン' }
+      ]
+    }
   }
 }
 </script>
