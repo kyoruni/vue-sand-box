@@ -1,6 +1,6 @@
 <template>
   <div class="fire mt-2">
-    <draggable group="poke">
+    <draggable group="poke" v-model="pokemons">
       <!-- item -->
       <div v-for="pokemon in pokemons" :key="pokemon.no" class="card mb-2">
         <div class="card-body">
