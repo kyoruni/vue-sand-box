@@ -1,6 +1,6 @@
 <template>
   <div class="left">
-    <draggable>
+    <draggable group="poke">
     <div class="bg-info">header</div>
     <div class="bg-warning">body</div>
     <div class="bg-success">footer</div>

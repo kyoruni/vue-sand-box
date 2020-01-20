@@ -2,7 +2,7 @@
   <div class="fire">
     <h6 class="mt-2">ほのお</h6>
 
-    <draggable>
+    <draggable group="poke">
       <!-- item -->
       <div class="card mb-2">
         <div class="card-body">とかげポケモン</div>
