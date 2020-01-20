@@ -30,6 +30,12 @@ const routes = [
     path: '/parent',
     name: 'parent',
     component: () => import('../views/Parent.vue')
+  },
+  {
+    // 親子コンポーネント間のメソッド実行について
+    path: '/parent2',
+    name: 'parent2',
+    component: () => import('../views/Parent2.vue')
   }
 ]
 
