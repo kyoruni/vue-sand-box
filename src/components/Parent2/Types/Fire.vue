@@ -1,22 +1,14 @@
 <template>
-  <div class="fire">
-    <h6 class="mt-2">ほのお</h6>
-
+  <div class="fire mt-2">
     <draggable group="poke">
       <!-- item -->
-      <div class="card mb-2">
-        <div class="card-body">とかげポケモン</div>
-        <div class="card-footer">ヒトカゲ</div>
-      </div>
-      <!-- item -->
-      <div class="card mb-2">
-        <div class="card-body">ひねずみポケモン</div>
-        <div class="card-footer">ヒノアラシ</div>
-      </div>
-      <!-- item -->
-      <div class="card mb-2">
-        <div class="card-body">ひよこポケモン</div>
-        <div class="card-footer">アチャモ</div>
+      <div v-for="pokemon in pokemons" :key="pokemon.no" class="card mb-2">
+        <div class="card-body">
+          {{ pokemon.kind }}
+        </div>
+        <div class="card-footer">
+          {{ pokemon.name }}
+        </div>
       </div>
     </draggable>
 
@@ -33,6 +25,15 @@ import draggable from 'vuedraggable'
 export default {
   components: {
     draggable
+  },
+  data () {
+    return {
+      pokemons: [
+        { no: '004', name: 'ヒトカゲ', kind: 'とかげポケモン' },
+        { no: '155', name: 'ヒノアラシ', kind: 'ひねずみポケモン' },
+        { no: '255', name: 'アチャモ', kind: 'ひよこポケモン' }
+      ]
+    }
   },
   methods: {
     closeTab () {
