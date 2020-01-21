@@ -41,7 +41,7 @@ export default {
     },
     cloneParts: function (e) {
       return {
-        id: 999,
+        id: this.layouts.length + 1,
         body: e.name,
         class: 'bg-danger'
       }
