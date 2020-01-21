@@ -4,7 +4,7 @@
       <!-- ポケモン -->
       <div class="col-4">
         <h6 class="font-weight-bold">ポケモン</h6>
-        <draggable tag="ul" class="list-group" :list="pokemons">
+        <draggable group="monsters" tag="ul" class="list-group" :list="pokemons">
           <li class="list-group-item" v-for="pokemon in pokemons" :key="pokemon.no">
             {{ pokemon.name }}
           </li>
@@ -13,7 +13,7 @@
       <!-- デジモン -->
       <div class="col-4">
         <h6 class="font-weight-bold">デジモン</h6>
-        <draggable tag="ul" class="list-group" :list="digimons">
+        <draggable group="monsters" tag="ul" class="list-group" :list="digimons">
           <li class="list-group-item" v-for="digimon in digimons" :key="digimon.no">
             {{ digimon.name }}
           </li>
