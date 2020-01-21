@@ -3,7 +3,7 @@
     <div class="d-flex">
       <!-- Left -->
       <div class="col-8">
-        <draggable>
+        <draggable group="layouts" :list="layouts">
           <div v-for="layout in layouts" :key="layout.id">
             <div :class="layout.class">
               {{ layout.body }}
@@ -13,7 +13,7 @@
       </div>
       <!-- Right -->
       <div class="col-4">
-        <draggable>
+        <draggable :group="{ name: 'layouts', pull: 'clone', put: false }">
           <b-card v-for="part in parts" :key="part.id" class="mb-2 mx-auto">
             <b-card-text>
               {{ part.name }}
