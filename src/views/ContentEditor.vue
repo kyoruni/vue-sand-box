@@ -13,7 +13,7 @@
       </div>
       <!-- Right -->
       <div class="col-4">
-        <draggable :group="{ name: 'layouts', pull: 'clone', put: false }" :move="checkMove" :list="parts" id="right">
+        <draggable :group="{ name: 'layouts', pull: 'clone', put: false }" :move="checkMove" :list="parts" :clone="cloneParts" id="right">
           <b-card v-for="part in parts" :key="part.id" class="mb-2 mx-auto">
             <b-card-text>
               {{ part.name }}
@@ -38,6 +38,13 @@ export default {
         return true
       }
       return false
+    },
+    cloneParts: function (e) {
+      return {
+        id: 999,
+        body: e.name,
+        class: 'bg-danger'
+      }
     }
   },
   data () {
