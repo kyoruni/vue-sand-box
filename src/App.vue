@@ -30,6 +30,10 @@
         <b-navbar-nav>
           <b-nav-item to="/parent2">親子コンポーネント2</b-nav-item>
         </b-navbar-nav>
+        <!-- #20 Drag Resize -->
+        <b-navbar-nav>
+          <b-nav-item to="/drag-resize">ドラッグでリサイズ</b-nav-item>
+        </b-navbar-nav>
       </b-collapse>
     </b-navbar>
     <!-- メインページ -->

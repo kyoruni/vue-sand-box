@@ -36,6 +36,12 @@ const routes = [
     path: '/parent2',
     name: 'parent2',
     component: () => import('../views/Parent2.vue')
+  },
+  {
+    // #20 ドラッグでリサイズ
+    path: '/drag-resize',
+    name: 'drag-resize',
+    component: () => import('../views/DragResize.vue')
   }
 ]
 
