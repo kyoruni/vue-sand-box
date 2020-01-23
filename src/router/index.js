@@ -42,6 +42,12 @@ const routes = [
     path: '/drag-resize',
     name: 'drag-resize',
     component: () => import('../views/DragResize.vue')
+  },
+  {
+    // #20 ドラッグでリサイズ2
+    path: '/drag-resize2',
+    name: 'drag-resize2',
+    component: () => import('../views/DragResize2.vue')
   }
 ]
 
