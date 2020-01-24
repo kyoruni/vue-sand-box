@@ -1,27 +1,17 @@
 <template>
   <div class="drag-resize">
-    <!-- 1つ目の要素 -->
-    <div class="div1" :style="{ height: changeheight1 } ">
-      <vue-draggable-resizable :w="width1" :h="height1" :min-height="100" :min-width="500" :handles="['bm']" :parent="false" :draggable="false"
-        @resizing="onResize" class="divSection">
-        <p>Width: {{ width1 }} / Height: {{ height1 }}</p>
-        div1
-      </vue-draggable-resizable>
-    </div>
-    <!-- 2つ目の要素 -->
-    <div class="div2" :style="{ height: changeheight2 } ">
-      <vue-draggable-resizable :w="width2" :h="height2" :min-height="100" :min-width="500" :handles="['bm']" :parent="false" :draggable="false"
-        @resizing="onResize2" class="divSection">
-        <p>Width: {{ width2 }} / Height: {{ height2 }}</p>
-        div2
-      </vue-draggable-resizable>
-    </div>
-    <!-- 3つ目の要素 -->
-    <div class="div3" :style="{ height: changeheight3 } ">
-      <vue-draggable-resizable :w="width3" :h="height3" :min-height="100" :min-width="500" :handles="['bm']" :parent="false" :draggable="false"
-        @resizing="onResize3" class="divSection">
-        <p>Width: {{ width3 }} / Height: {{ height3 }}</p>
-        div3
+    <div v-for="(content, index) in contents" :key="index" class="section">
+      <vue-draggable-resizable class="contents" :style="content.styles"
+        :w="content.width"
+        :h="content.height"
+        :min-width="500"
+        :min-height="100"
+        :handles="['bm']"
+        :draggable="false"
+        @resizing="onResize"
+        @activated="onActivate(content, index)"
+        @change="changeElement">
+        {{ content.name }}
       </vue-draggable-resizable>
     </div>
   </div>
@@ -37,69 +27,37 @@ export default {
   },
   data () {
     return {
-      width1: 500,
-      height1: 200,
-      width2: 500,
-      height2: 200,
-      width3: 500,
-      height3: 200
+      contents: [
+        { name: 'header', width: 500, height: 200, styles: [{ background: 'red', zIndex: 9999, position: 'relative' }] },
+        { name: 'body', width: 500, height: 200, styles: [{ background: 'pink', zIndex: 8888, position: 'relative' }] },
+        { name: 'footer', width: 500, height: 200, styles: [{ background: 'lime', zIndex: 7777, position: 'relative' }] }
+      ],
+      width: '',
+      height: '',
+      index: ''
     }
   },
   methods: {
-    /* xとyも渡さないとリサイズ失敗するので必要 */
-    onResize (x, y, width, height) {
-      this.width1 = width
-      this.height1 = height
+    /* クリックした要素の情報を取得 */
+    onActivate (element, index) {
+      this.width = element.width
+      this.height = element.height
+      this.index = index
     },
-    onResize2 (x, y, width, height) {
-      this.width2 = width
-      this.height2 = height
+    /* アクティブな要素の変更があったら反映する */
+    changeElement () {
+      this.contents[this.index].height = this.height
     },
-    onResize3 (x, y, width, height) {
-      this.width3 = width
-      this.height3 = height
-    }
-  },
-  computed: {
-    changeheight1 () {
-      return this.height1 + 'px'
-    },
-    changeheight2 () {
-      return this.height2 + 'px'
-    },
-    changeheight3 () {
-      return this.height3 + 'px'
+    /* リサイズ後の高さを取得 */
+    onResize (height) {
+      this.height = height
     }
   }
 }
 </script>
 
 <style scoped>
-.div1 {
-  background: yellow;
-  width: 500px;
-  border: 1px solid red;
-  position: relative;
-  z-index: 999 /* div1の上にdiv2が重なるとドラッグできなくなるので、上のブロックから順に大きい数を振る */
-}
-
-.div2 {
-  background: pink;
-  width: 500px;
-  border: 1px solid blue;
-  position: relative;
-  z-index: 888
-}
-
-.div3 {
-  background: lime;
-  width: 500px;
-  border: 1px solid green;
-  position: relative;
-  z-index: 777
-}
-
-.divSection {
+.contents {
   padding: 20px
 }
 </style>
@@ -107,8 +65,7 @@ export default {
 <style>
 /* style scope だと別コンポーネントにスタイル持っていけないので、styleに別出し */
 .handle {
-  background: red;
-  cursor: pointer
+  background: red
 }
 /* ハンドルドラッグ中 */
 .handle:active {
