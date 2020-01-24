@@ -1,30 +1,28 @@
 <template>
   <div class="drag-resize">
-    <div>
-      <!-- 1つ目の要素 -->
-      <div class="div1" :style="{ height: changeheight1 } ">
-        <vue-draggable-resizable :w="width1" :h="height1" :min-height="100" :min-width="500" :handles="['bm']" :parent="false" :draggable="false"
-          @resizing="onResize" class="divSection">
-          <p>Width: {{ width1 }} / Height: {{ height1 }}</p>
-          div1
-        </vue-draggable-resizable>
-      </div>
-      <!-- 2つ目の要素 -->
-      <div class="div2" :style="{ height: changeheight2 } ">
-        <vue-draggable-resizable :w="width2" :h="height2" :min-height="100" :min-width="500" :handles="['bm']" :parent="false" :draggable="false"
-          @resizing="onResize2" class="divSection">
-          <p>Width: {{ width2 }} / Height: {{ height2 }}</p>
-          div2
-        </vue-draggable-resizable>
-      </div>
-      <!-- 3つ目の要素 -->
-      <div class="div3" :style="{ height: changeheight3 } ">
-        <vue-draggable-resizable :w="width3" :h="height3" :min-height="100" :min-width="500" :handles="['bm']" :parent="false" :draggable="false"
-          @resizing="onResize3" class="divSection">
-          <p>Width: {{ width3 }} / Height: {{ height3 }}</p>
-          div3
-        </vue-draggable-resizable>
-      </div>
+    <!-- 1つ目の要素 -->
+    <div class="div1" :style="{ height: changeheight1 } ">
+      <vue-draggable-resizable :w="width1" :h="height1" :min-height="100" :min-width="500" :handles="['bm']" :parent="false" :draggable="false"
+        @resizing="onResize" class="divSection">
+        <p>Width: {{ width1 }} / Height: {{ height1 }}</p>
+        div1
+      </vue-draggable-resizable>
+    </div>
+    <!-- 2つ目の要素 -->
+    <div class="div2" :style="{ height: changeheight2 } ">
+      <vue-draggable-resizable :w="width2" :h="height2" :min-height="100" :min-width="500" :handles="['bm']" :parent="false" :draggable="false"
+        @resizing="onResize2" class="divSection">
+        <p>Width: {{ width2 }} / Height: {{ height2 }}</p>
+        div2
+      </vue-draggable-resizable>
+    </div>
+    <!-- 3つ目の要素 -->
+    <div class="div3" :style="{ height: changeheight3 } ">
+      <vue-draggable-resizable :w="width3" :h="height3" :min-height="100" :min-width="500" :handles="['bm']" :parent="false" :draggable="false"
+        @resizing="onResize3" class="divSection">
+        <p>Width: {{ width3 }} / Height: {{ height3 }}</p>
+        div3
+      </vue-draggable-resizable>
     </div>
   </div>
 </template>
