@@ -1,18 +1,28 @@
 <template>
   <div class="drag-resize">
     <div>
-
-      <div class="div1">
-        <vue-draggable-resizable :w="500" :h="200" :min-height="200" :min-width="500" :handles="['bm']" @resizing="onResize" :parent="true" :draggable="false" style="background: rgba(0,0,0,0.5); padding: 20px;">
-          <p>X: {{ x1 }} / Y: {{ y1 }} - Width: {{ width1 }} / Height: {{ height1 }}</p>
+      <!-- 1つ目の要素 -->
+      <div class="div1" :style="{ height: changeheight1 } ">
+        <vue-draggable-resizable :w="width1" :h="height1" :min-height="100" :min-width="500" :handles="['bm']" :parent="false" :draggable="false"
+          @resizing="onResize" class="divSection">
+          <p>Width: {{ width1 }} / Height: {{ height1 }}</p>
           div1
         </vue-draggable-resizable>
       </div>
-
-      <div class="div2">
-        <vue-draggable-resizable :w="500" :h="200" :min-width="500" :handles="['bm']" @resizing="onResize2" :parent="true" :draggable="true" style="background: rgba(255,0,0,0.5); padding: 20px;">
-          <p>X: {{ x2 }} / Y: {{ y2 }} - Width: {{ width2 }} / Height: {{ height2 }}</p>
+      <!-- 2つ目の要素 -->
+      <div class="div2" :style="{ height: changeheight2 } ">
+        <vue-draggable-resizable :w="width2" :h="height2" :min-height="100" :min-width="500" :handles="['bm']" :parent="false" :draggable="false"
+          @resizing="onResize2" class="divSection">
+          <p>Width: {{ width2 }} / Height: {{ height2 }}</p>
           div2
+        </vue-draggable-resizable>
+      </div>
+      <!-- 3つ目の要素 -->
+      <div class="div3" :style="{ height: changeheight3 } ">
+        <vue-draggable-resizable :w="width3" :h="height3" :min-height="100" :min-width="500" :handles="['bm']" :parent="false" :draggable="false"
+          @resizing="onResize3" class="divSection">
+          <p>Width: {{ width3 }} / Height: {{ height3 }}</p>
+          div3
         </vue-draggable-resizable>
       </div>
     </div>
@@ -29,55 +39,82 @@ export default {
   },
   data () {
     return {
-      width1: 0,
-      height1: 0,
-      x1: 0,
-      y1: 0,
-      width2: 0,
-      height2: 0,
-      x2: 0,
-      y2: 0
+      width1: 500,
+      height1: 200,
+      width2: 500,
+      height2: 200,
+      width3: 500,
+      height3: 200
     }
   },
   methods: {
+    /* xとyも渡さないとリサイズ失敗するので必要 */
     onResize (x, y, width, height) {
-      this.x = x
-      this.y = y
       this.width1 = width
       this.height1 = height
     },
     onResize2 (x, y, width, height) {
-      this.x = x
-      this.y = y
       this.width2 = width
       this.height2 = height
+    },
+    onResize3 (x, y, width, height) {
+      this.width3 = width
+      this.height3 = height
+    }
+  },
+  computed: {
+    changeheight1 () {
+      return this.height1 + 'px'
+    },
+    changeheight2 () {
+      return this.height2 + 'px'
+    },
+    changeheight3 () {
+      return this.height3 + 'px'
     }
   }
 }
 </script>
 
-<style>
-.handle {
-  cursor: row-resize
-}
-</style>
-
 <style scoped>
 .div1 {
   background: yellow;
-  height: 300px;
   width: 500px;
   border: 1px solid red;
   position: relative;
-  z-index: 999
+  z-index: 999 /* div1の上にdiv2が重なるとドラッグできなくなるので、上のブロックから順に大きい数を振る */
 }
 
 .div2 {
-  height: 300px;
+  background: pink;
   width: 500px;
   border: 1px solid blue;
   position: relative;
-  top: 0px;
   z-index: 888
+}
+
+.div3 {
+  background: lime;
+  width: 500px;
+  border: 1px solid green;
+  position: relative;
+  z-index: 777
+}
+
+.divSection {
+  padding: 20px
+}
+</style>
+
+<style>
+/* style scope だと別コンポーネントにスタイル持っていけないので、styleに別出し */
+.handle {
+  background: red;
+  cursor: pointer
+}
+/* ハンドルドラッグ中 */
+.handle:active {
+  background: blue;
+  cursor: row-resize
 }
 </style>
