@@ -34,10 +34,6 @@
         <b-navbar-nav>
           <b-nav-item to="/drag-resize">ドラッグでリサイズ</b-nav-item>
         </b-navbar-nav>
-        <!-- #20 Drag Resize2 -->
-        <b-navbar-nav>
-          <b-nav-item to="/drag-resize2">その2</b-nav-item>
-        </b-navbar-nav>
       </b-collapse>
     </b-navbar>
     <!-- メインページ -->
