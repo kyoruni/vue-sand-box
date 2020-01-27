@@ -11,6 +11,12 @@ const routes = [
     component: Home
   },
   {
+    // #5 データ絞り込み
+    path: '/filter',
+    name: 'filter',
+    component: () => import('../views/Filter.vue')
+  },
+  {
     path: '/todo',
     name: 'todo',
     component: () => import('../views/Todo.vue')
