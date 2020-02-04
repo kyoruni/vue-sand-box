@@ -67,7 +67,7 @@ export default {
   },
   // 画面表示時に、CategoriesをbeforeCategoriessにコピーする
   mounted () {
-    this.beforeCategories = this.categories.slice()
+    this.beforeCategories = JSON.parse(JSON.stringify(this.categories))
   },
   methods: {
     // Itemsの末尾に新しいアイテムを追加
