@@ -1,19 +1,37 @@
 <template>
   <div class="array-copy">
-    <div class="row">
-      <!-- items -->
-      <div v-for="category in categories" :key="category.id" class="col-4">
-        <h6>{{ category.id }}：{{ category.name }}</h6>
-        <ul class="list-group">
-          <li v-for="item in category.items" :key="item.id" class="list-group-item">
-            {{ item.id }}-{{ item.id }}：{{ item.name }}
-          </li>
-        </ul>
-        <!-- ボタン -->
-        <div class="button mt-2">
-          <button class="btn btn-info" @click="addButton(category.id)">
-            {{ category.name }} +
-          </button>
+    <!-- categories -->
+    <div class="categories">
+      <h5>Categories</h5>
+      <div class="row">
+        <div v-for="category in categories" :key="category.id" class="col-4">
+          <h6>{{ category.id }}：{{ category.name }}</h6>
+          <ul class="list-group">
+            <li v-for="item in category.items" :key="item.id" class="list-group-item">
+              {{ item.id }}-{{ item.id }}：{{ item.name }}
+            </li>
+          </ul>
+          <!-- ボタン -->
+          <div class="button mt-2">
+            <button class="btn btn-info" @click="addButton(category.id)">
+              {{ category.name }} +
+            </button>
+          </div>
+        </div>
+      </div>
+  </div>
+
+    <!-- before Categories -->
+    <div class="before-categories mt-3">
+      <h5>before Categories</h5>
+      <div class="row">
+        <div v-for="beforeCategory in beforeCategories" :key="beforeCategory.id" class="col-4">
+          <h6>{{ beforeCategory.id }}：{{ beforeCategory.name }}</h6>
+          <ul class="list-group">
+            <li v-for="beforeItem in beforeCategory.items" :key="beforeItem.id" class="list-group-item">
+              {{ beforeItem.id }}-{{ beforeItem.id }}：{{ beforeItem.name }}
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -49,7 +67,7 @@ export default {
   },
   // 画面表示時に、CategoriesをbeforeCategoriessにコピーする
   mounted () {
-    this.beforeCategories = this.categories
+    this.beforeCategories = this.categories.slice()
   },
   methods: {
     // Itemsの末尾に新しいアイテムを追加
