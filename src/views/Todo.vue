@@ -15,11 +15,25 @@
       </b-col>
       <b-col cols="8">
         <b-list-group flush>
-          <b-list-group-item>item 1</b-list-group-item>
-          <b-list-group-item>item 1</b-list-group-item>
-          <b-list-group-item>item 1</b-list-group-item>
+          <b-list-group-item v-for="task in tasks" :key="task.id">
+            {{ task.id }}：{{ task.title }}
+          </b-list-group-item>
         </b-list-group>
       </b-col>
     </b-row>
   </div>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      tasks: [
+        { id: 1, title: '買い物' },
+        { id: 2, title: 'ゴミ捨て' },
+        { id: 3, title: '掃除機' }
+      ]
+    }
+  }
+}
+</script>
