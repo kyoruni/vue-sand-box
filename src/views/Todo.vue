@@ -8,7 +8,7 @@
             </b-form-input>
           </b-form-group>
           <div class="text-right">
-            <b-button type="button" variant="outline-info" class="mr-2">登録</b-button>
+            <b-button type="button" variant="outline-info" class="mr-2" @click="addButton">登録</b-button>
             <b-button type="reset" variant="outline-danger">クリア</b-button>
           </div>
         </b-form>
@@ -33,6 +33,11 @@ export default {
         { id: 2, title: 'ゴミ捨て' },
         { id: 3, title: '掃除機' }
       ]
+    }
+  },
+  methods: {
+    addButton () {
+      alert('add Button!')
     }
   }
 }
