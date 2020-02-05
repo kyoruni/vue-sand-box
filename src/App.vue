@@ -8,31 +8,7 @@
       <b-collapse id="nav-collapse" is-nav>
         <!-- Home -->
         <b-navbar-nav>
-          <b-nav-item to="/">HOME</b-nav-item>
-        </b-navbar-nav>
-        <!-- Todo -->
-        <b-navbar-nav>
-          <b-nav-item to="/todo">TODO</b-nav-item>
-        </b-navbar-nav>
-        <!-- Draggable -->
-        <b-navbar-nav>
-          <b-nav-item to="/draggable">ドラッグ＆ドロップ</b-nav-item>
-        </b-navbar-nav>
-        <!-- TinyMCE -->
-        <b-navbar-nav>
-          <b-nav-item to="/editor">エディター</b-nav-item>
-        </b-navbar-nav>
-        <!-- Components-Method -->
-        <b-navbar-nav>
-          <b-nav-item to="/parent">親子コンポーネント</b-nav-item>
-        </b-navbar-nav>
-        <!-- Components-Method2 -->
-        <b-navbar-nav>
-          <b-nav-item to="/parent2">親子コンポーネント2</b-nav-item>
-        </b-navbar-nav>
-        <!-- Array Copy -->
-        <b-navbar-nav>
-          <b-nav-item to="/array-copy">配列コピー</b-nav-item>
+          <b-nav-item to="/">目次</b-nav-item>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
