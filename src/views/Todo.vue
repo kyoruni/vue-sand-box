@@ -4,7 +4,7 @@
       <b-col cols="4">
         <b-form class="mt-3">
           <b-form-group label="タスク" label-for="task">
-            <b-form-input id="task" type="text" placeholder="タスクを入力">
+            <b-form-input v-model="textInput" id="task" type="text" placeholder="タスクを入力">
             </b-form-input>
           </b-form-group>
           <div class="text-right">
@@ -28,6 +28,7 @@
 export default {
   data () {
     return {
+      textInput: '',
       tasks: [
         { id: 1, title: '買い物' },
         { id: 2, title: 'ゴミ捨て' },
@@ -37,7 +38,16 @@ export default {
   },
   methods: {
     addButton () {
-      alert('add Button!')
+      let newTask = { id: this.maxId + 1, title: this.textInput }
+      this.tasks.push(newTask)
+    }
+  },
+  computed: {
+    maxId () {
+      let allTasksId = this.tasks.map(task => {
+        return task.id
+      })
+      return Math.max.apply(null, allTasksId)
     }
   }
 }
