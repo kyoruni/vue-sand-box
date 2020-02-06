@@ -36,6 +36,12 @@ const routes = [
     path: '/parent2',
     name: 'parent2',
     component: () => import('../views/Parent2.vue')
+  },
+  {
+    // #21 配列のコピー
+    path: '/array-copy',
+    name: 'arrayCopy',
+    component: () => import('../views/ArrayCopy.vue')
   }
 ]
 

@@ -1,37 +1,17 @@
 <template>
   <div id="app">
     <!-- ヘッダーメニュー -->
-    <b-navbar toggleable="lg" type="dark" variant="dark">
-      <b-navbar-brand href="#">Vue.js sand-box</b-navbar-brand>
+    <!-- <b-navbar toggleable="lg" type="dark" variant="dark">
+      <b-navbar-brand href="#">Vue.js sand-box</b-navbar-brand> -->
       <!-- メニューリンク -->
-      <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-      <b-collapse id="nav-collapse" is-nav>
+      <!-- <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+      <b-collapse id="nav-collapse" is-nav> -->
         <!-- Home -->
-        <b-navbar-nav>
-          <b-nav-item to="/">HOME</b-nav-item>
-        </b-navbar-nav>
-        <!-- Todo -->
-        <b-navbar-nav>
-          <b-nav-item to="/todo">TODO</b-nav-item>
-        </b-navbar-nav>
-        <!-- Draggable -->
-        <b-navbar-nav>
-          <b-nav-item to="/draggable">ドラッグ＆ドロップ</b-nav-item>
-        </b-navbar-nav>
-        <!-- TinyMCE -->
-        <b-navbar-nav>
-          <b-nav-item to="/editor">エディター</b-nav-item>
-        </b-navbar-nav>
-        <!-- Components-Method -->
-        <b-navbar-nav>
-          <b-nav-item to="/parent">親子コンポーネント</b-nav-item>
-        </b-navbar-nav>
-        <!-- Components-Method2 -->
-        <b-navbar-nav>
-          <b-nav-item to="/parent2">親子コンポーネント2</b-nav-item>
+        <!-- <b-navbar-nav>
+          <b-nav-item to="/">目次</b-nav-item>
         </b-navbar-nav>
       </b-collapse>
-    </b-navbar>
+    </b-navbar> -->
     <!-- メインページ -->
     <b-container fluid class="mt-2">
       <router-view/>
