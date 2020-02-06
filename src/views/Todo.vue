@@ -54,7 +54,7 @@ export default {
   },
   methods: {
     addButton () {
-      let newTask = { id: this.maxId + 1, title: this.textInput }
+      let newTask = { id: this.maxId + 1, title: this.textInput, status: 0 }
       this.tasks.push(newTask)
     },
     deleteButton (task) {
