@@ -6,7 +6,7 @@
       </b-navbar-brand>
     </b-navbar>
     <b-row>
-      <b-col cols="4">
+      <b-col sm="4" xs="12">
         <b-form class="mt-3">
           <b-form-group label="タスク" label-for="task">
             <b-form-input v-model="textInput" id="task" type="text" placeholder="タスクを入力">
@@ -18,7 +18,7 @@
           </div>
         </b-form>
       </b-col>
-      <b-col cols="8">
+      <b-col sm="8" xs="12">
         <b-list-group flush>
           <b-list-group-item v-for="task in tasks" :key="task.id">
             <div class="d-flex justify-content-between">
