@@ -36,14 +36,12 @@
               </div>
               <div class="text-right">
                 <b-badge pill v-if="task.done === false" class="task-label mr-2">
-                  Now
+                  まだ
                 </b-badge>
                 <b-badge pill v-if="task.done === true" variant="success" class="task-label mr-2">
-                  Done
+                  完了
                 </b-badge>
-                <b-button type="button" variant="outline-danger" size="sm" @click="deleteButton(task)">
-                  削除
-                </b-button>
+                <font-awesome-icon icon="minus-circle" @click="deleteButton(task)" class="text-danger delete-button" />
               </div>
             </div>
           </b-list-group-item>
@@ -96,5 +94,10 @@ export default {
 
 .done {
   color: #ccc;
+}
+
+.delete-button:hover {
+  opacity: 0.6;
+  transition-duration: 0.3s;
 }
 </style>
