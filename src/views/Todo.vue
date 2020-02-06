@@ -24,7 +24,9 @@
                 <b-badge pill v-if="task.status === 1" variant="success" class="task-label mr-2">
                   Done
                 </b-badge>
-                {{ task.id }}：{{ task.title }}
+                <span :class="{ done: task.status }">
+                  {{ task.id }}：{{ task.title }}
+                </span>
               </div>
               <div class="text-right">
                 <b-button v-if="task.status === 0" type="button" variant="outline-success" size="sm" @click="doneButton(task)" class="mr-2">
@@ -92,5 +94,10 @@ export default {
 <style scoped>
 .task-label {
   width: 50px
+}
+
+.done {
+  color: #ccc;
+  text-decoration: line-through
 }
 </style>
