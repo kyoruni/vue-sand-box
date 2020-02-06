@@ -7,7 +7,7 @@
     </b-navbar>
     <b-row>
       <b-col sm="4" xs="12">
-        <b-form class="mt-3">
+        <b-form class="mt-3 ml-2 mr-2">
           <b-form-group label="タスク" label-for="task">
             <b-form-input v-model="textInput" id="task" type="text" placeholder="タスクを入力">
             </b-form-input>
