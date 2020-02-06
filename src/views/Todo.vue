@@ -16,7 +16,14 @@
       <b-col cols="8">
         <b-list-group flush>
           <b-list-group-item v-for="task in tasks" :key="task.id">
-            {{ task.id }}：{{ task.title }}
+            <div class="d-flex justify-content-between">
+              <div class="text-left">
+                {{ task.id }}：{{ task.title }}
+              </div>
+              <div class="text-right">
+                <b-button type="button" variant="outline-danger" size="sm" @click="deleteButton">削除</b-button>
+              </div>
+            </div>
           </b-list-group-item>
         </b-list-group>
       </b-col>
@@ -40,6 +47,9 @@ export default {
     addButton () {
       let newTask = { id: this.maxId + 1, title: this.textInput }
       this.tasks.push(newTask)
+    },
+    deleteButton () {
+      alert('delete button')
     }
   },
   computed: {
