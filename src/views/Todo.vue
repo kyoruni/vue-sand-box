@@ -23,23 +23,24 @@
           <b-list-group-item v-for="task in tasks" :key="task.id">
             <div class="d-flex justify-content-between">
               <div class="text-left">
-                <b-badge pill v-if="task.status === 0" class="task-label mr-2">
-                  Now
-                </b-badge>
-                <b-badge pill v-if="task.status === 1" variant="success" class="task-label mr-2">
-                  Done
-                </b-badge>
-                <span :class="{ done: task.status }">
+<!-- start -->
+                <b-form-checkbox
+                  :id="'checkbox'+ task.id"
+                  :class="{ done: task.done }"
+                  v-model="task.done"
+                  name="checkbox"
+                  class="position-static">
                   {{ task.id }}：{{ task.title }}
-                </span>
+                </b-form-checkbox>
+<!-- end -->
               </div>
               <div class="text-right">
-                <b-button v-if="task.status === 0" type="button" variant="outline-success" size="sm" @click="doneButton(task)" class="mr-2">
-                  完了
-                </b-button>
-                <b-button v-if="task.status === 1" type="button" variant="outline-secondary" size="sm" @click="nowButton(task)" class="mr-2">
-                  戻す
-                </b-button>
+                <b-badge pill v-if="task.done === false" class="task-label mr-2">
+                  Now
+                </b-badge>
+                <b-badge pill v-if="task.done === true" variant="success" class="task-label mr-2">
+                  Done
+                </b-badge>
                 <b-button type="button" variant="outline-danger" size="sm" @click="deleteButton(task)">
                   削除
                 </b-button>
@@ -58,28 +59,20 @@ export default {
     return {
       textInput: '',
       tasks: [
-        { id: 1, title: '買い物', status: 0 },
-        { id: 2, title: 'ゴミ捨て', status: 1 },
-        { id: 3, title: '掃除機', status: 1 }
+        { id: 1, title: '買い物', done: false },
+        { id: 2, title: 'ゴミ捨て', done: false },
+        { id: 3, title: '掃除機', done: false }
       ]
     }
   },
   methods: {
     addButton () {
-      let newTask = { id: this.maxId + 1, title: this.textInput, status: 0 }
+      let newTask = { id: this.maxId + 1, title: this.textInput, done: 0 }
       this.tasks.push(newTask)
     },
     deleteButton (task) {
       let targetTaskIndex = this.tasks.indexOf(task)
       this.tasks.splice(targetTaskIndex, 1)
-    },
-    doneButton (task) {
-      let targetTaskIndex = this.tasks.indexOf(task)
-      this.tasks[targetTaskIndex].status = 1
-    },
-    nowButton (task) {
-      let targetTaskIndex = this.tasks.indexOf(task)
-      this.tasks[targetTaskIndex].status = 0
     }
   },
   computed: {
@@ -103,6 +96,5 @@ export default {
 
 .done {
   color: #ccc;
-  text-decoration: line-through
 }
 </style>
