@@ -21,7 +21,7 @@
                 {{ task.id }}：{{ task.title }}
               </div>
               <div class="text-right">
-                <b-button type="button" variant="outline-danger" size="sm" @click="deleteButton">削除</b-button>
+                <b-button type="button" variant="outline-danger" size="sm" @click="deleteButton(task)">削除</b-button>
               </div>
             </div>
           </b-list-group-item>
@@ -48,8 +48,9 @@ export default {
       let newTask = { id: this.maxId + 1, title: this.textInput }
       this.tasks.push(newTask)
     },
-    deleteButton () {
-      alert('delete button')
+    deleteButton (task) {
+      let targetTaskIndex = this.tasks.indexOf(task)
+      this.tasks.splice(targetTaskIndex, 1)
     }
   },
   computed: {
