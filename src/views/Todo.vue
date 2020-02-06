@@ -1,5 +1,10 @@
 <template>
   <div class="todo">
+    <b-navbar toggleable="lg" type="dark" variant="info">
+      <b-navbar-brand href="#">
+        やることリスト
+      </b-navbar-brand>
+    </b-navbar>
     <b-row>
       <b-col cols="4">
         <b-form class="mt-3">
