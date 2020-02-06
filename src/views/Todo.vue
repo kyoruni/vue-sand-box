@@ -18,6 +18,15 @@
           <b-list-group-item v-for="task in tasks" :key="task.id">
             <div class="d-flex justify-content-between">
               <div class="text-left">
+                <b-badge pill v-if="task.status === 0" class="task-label mr-2">
+                  New
+                </b-badge>
+                <b-badge pill v-if="task.status === 1" variant="warning" class="task-label mr-2">
+                  Now
+                </b-badge>
+                <b-badge pill v-if="task.status === 2" variant="success" class="task-label mr-2">
+                  Done
+                </b-badge>
                 {{ task.id }}：{{ task.title }}
               </div>
               <div class="text-right">
@@ -37,9 +46,9 @@ export default {
     return {
       textInput: '',
       tasks: [
-        { id: 1, title: '買い物' },
-        { id: 2, title: 'ゴミ捨て' },
-        { id: 3, title: '掃除機' }
+        { id: 1, title: '買い物', status: 0 },
+        { id: 2, title: 'ゴミ捨て', status: 1 },
+        { id: 3, title: '掃除機', status: 2 }
       ]
     }
   },
@@ -66,3 +75,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.task-label {
+  width: 50px
+}
+</style>
