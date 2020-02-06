@@ -19,18 +19,23 @@
             <div class="d-flex justify-content-between">
               <div class="text-left">
                 <b-badge pill v-if="task.status === 0" class="task-label mr-2">
-                  New
-                </b-badge>
-                <b-badge pill v-if="task.status === 1" variant="warning" class="task-label mr-2">
                   Now
                 </b-badge>
-                <b-badge pill v-if="task.status === 2" variant="success" class="task-label mr-2">
+                <b-badge pill v-if="task.status === 1" variant="success" class="task-label mr-2">
                   Done
                 </b-badge>
                 {{ task.id }}：{{ task.title }}
               </div>
               <div class="text-right">
-                <b-button type="button" variant="outline-danger" size="sm" @click="deleteButton(task)">削除</b-button>
+                <b-button v-if="task.status === 0" type="button" variant="outline-success" size="sm" @click="doneButton(task)" class="mr-2">
+                  完了
+                </b-button>
+                <b-button v-if="task.status === 1" type="button" variant="outline-secondary" size="sm" @click="nowButton(task)" class="mr-2">
+                  戻す
+                </b-button>
+                <b-button type="button" variant="outline-danger" size="sm" @click="deleteButton(task)">
+                  削除
+                </b-button>
               </div>
             </div>
           </b-list-group-item>
@@ -48,7 +53,7 @@ export default {
       tasks: [
         { id: 1, title: '買い物', status: 0 },
         { id: 2, title: 'ゴミ捨て', status: 1 },
-        { id: 3, title: '掃除機', status: 2 }
+        { id: 3, title: '掃除機', status: 1 }
       ]
     }
   },
@@ -60,6 +65,14 @@ export default {
     deleteButton (task) {
       let targetTaskIndex = this.tasks.indexOf(task)
       this.tasks.splice(targetTaskIndex, 1)
+    },
+    doneButton (task) {
+      let targetTaskIndex = this.tasks.indexOf(task)
+      this.tasks[targetTaskIndex].status = 1
+    },
+    nowButton (task) {
+      let targetTaskIndex = this.tasks.indexOf(task)
+      this.tasks[targetTaskIndex].status = 0
     }
   },
   computed: {
