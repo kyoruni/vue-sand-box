@@ -55,6 +55,9 @@ export default {
   },
   computed: {
     maxId () {
+      // タスクが1件もない場合、0を返す
+      if (this.tasks.length === 0) return 0
+
       let allTasksId = this.tasks.map(task => {
         return task.id
       })
