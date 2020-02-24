@@ -13,8 +13,15 @@
       </b-collapse>
     </b-navbar> -->
     <!-- メインページ -->
-    <b-container fluid class="mt-2">
+    <b-container fluid>
       <router-view/>
     </b-container>
   </div>
 </template>
+
+<style scoped>
+.container-fluid {
+  padding: 0;
+  overflow: hidden
+}
+</style>
