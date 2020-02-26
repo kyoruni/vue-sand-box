@@ -1,11 +1,16 @@
 <template>
   <div class="calendar">
-    calendar
+    <VCalendar/>
   </div>
 </template>
 
 <script>
+import VCalendar from 'v-calendar/lib/components/calendar.umd'
+
 export default {
-  name: 'Calendar'
+  name: 'Calendar',
+  components: {
+    VCalendar
+  }
 }
 </script>
