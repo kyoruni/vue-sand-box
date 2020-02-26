@@ -42,6 +42,12 @@ const routes = [
     path: '/array-copy',
     name: 'arrayCopy',
     component: () => import('../views/ArrayCopy.vue')
+  },
+  {
+    // #26 V-Calendar
+    path: '/calendar',
+    name: 'calendar',
+    component: () => import('../views/Calendar.vue')
   }
 ]
 

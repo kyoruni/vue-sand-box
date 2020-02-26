@@ -14,6 +14,7 @@
           <div class="list-group">
             <b-link to="/draggable" class="list-group-item list-group-item-action">ドラッグ＆ドロップ</b-link>
             <b-link to="/editor" class="list-group-item list-group-item-action">エディター表示</b-link>
+            <b-link to="/calendar" class="list-group-item list-group-item-action">カレンダー表示</b-link>
           </div>
         </div>
       </div>
