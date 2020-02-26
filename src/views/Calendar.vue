@@ -18,7 +18,9 @@ export default {
         {
           key: 'today',
           highlight: true,
-          dates: new Date()
+          dates: [
+            { start: new Date(2020, 1, 3), end: new Date(2020, 1, 5) }
+          ]
         }
       ]
     }
